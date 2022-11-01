@@ -4,4 +4,4 @@
 ### A website - online slaves shop 
 ### Cheap slaves today - rich future tomorrow!
 
-Figma: https://www.figma.com/file/a7kjV6tklMFahe93uHe35i/Untitled?node-id=0%3A1
+Figma: [тык](https://www.figma.com/file/a7kjV6tklMFahe93uHe35i/Untitled?node-id=0%3A1)
