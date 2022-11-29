@@ -140,6 +140,14 @@
     color: #2455b9;
 }
 
+.shop-review-block__show-more:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #15367c;
+}
+
 .shop-review-block__show-more > * {
     margin-bottom: 0;
     margin-top: 0;
@@ -257,4 +265,16 @@
 
 .shop-may-be-useful__arrow {
 
+}
+
+.shop-review-block-review-author-avatar__image {
+    max-height: 50px;
+}
+
+.shop-review-block-review-author-avatar__link {
+    opacity: 1;
+}
+
+.shop-review-block-review-author-avatar__link:hover {
+    opacity: 0.77;
 }

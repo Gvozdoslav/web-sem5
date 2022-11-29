@@ -2,3 +2,142 @@
     display: flex;
     flex-direction: column;
 }
+
+.shop-box-offer__img {
+    max-height: 340px;
+}
+
+.shop-box-note {
+    background-color: #D5F8E6;
+    text-align: center;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: 0;
+    padding: 0;
+    rotate: -26deg;
+    border-radius: 0.3em;
+}
+
+.shop-box-note-with-img {
+    display: flex;
+    background-color: #D5F8E6;
+    text-align: center;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: 0;
+    padding: 0;
+    rotate: 35deg;
+    border-radius: 0.3em;
+}
+
+.shop-box-note-with-img__img {
+    max-width: 124px;
+    max-height: 66px;
+    margin-left: -50px
+}
+
+.shop-box__text {
+    font-size: 36px;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.shop-box__text--addition-colored {
+    font-size: 36px;
+    margin: 0 20px;
+    text-align: center;
+    color: #2455b9;
+    letter-spacing: 0.1em;
+}
+
+.shop-box-offer {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+}
+
+.shop-box-spinner {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.shop-box-spinner:first-child {
+    margin-right: 20px;
+}
+
+.shop-box-spinner:last-child {
+    margin-left: 20px;
+}
+
+.shop-box-spinner__left {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    list-style: none;
+    align-items: center;
+    margin-right: 80px;
+}
+
+.shop-box-spinner__img-with-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: auto;
+}
+
+.shop-box-spinner__note {
+    background-color: #D5F8E6;
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    list-style: none;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 0.5em;
+    margin-top: auto;
+}
+
+.shop-box-spinner__img {
+    max-width: 345px;
+    max-height: 260px;
+    margin-bottom: 11.6%;
+    margin-top: 11.6%;
+}
+
+.shop-box-spinner__pages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.shop-box-spinner__page {
+    height: 10px;
+    width: 370px;
+    display: flex;
+    background-color: #D5F8E6;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.shop-box-spinner__page:active {
+    height: 10px;
+    width: 370px;
+    display: flex;
+    background-color: #D5F8E6;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.shop-box-spinner__element {
+}
