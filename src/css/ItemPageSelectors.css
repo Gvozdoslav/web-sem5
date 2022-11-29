@@ -51,6 +51,7 @@
     display: flex;
     flex-direction: column;
     list-style-type: none;
+    padding: 0;
 }
 
 .shop-container-box__button-container {
@@ -90,6 +91,11 @@
 .shop-container-box__button-link {
     text-decoration: none;
     color: #2455b9;
+}
+
+.shop-container-box__button-link:hover {
+    text-decoration: none;
+    color: #15367c;
 }
 
 .shop-review-block {
@@ -203,7 +209,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
+    width: 75%;
 }
 
 .shop-may-be-useful__title {
@@ -218,32 +224,34 @@
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-evenly;
+    width: 85%;
     margin: 1% auto 0;
     padding: 0;
 }
 
 .shop-may-be-useful__items > * {
-    margin-right: 6.43%;
+    /*margin-right: 6.43%;*/
 }
 
 .shop-may-be-useful__item {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .shop-may-be-useful__item-picture {
     max-height: 140px;
+    border-radius: 10%;
 }
 
 .shop-may-be-useful__item-footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
+    width: 80%;
 }
-
 
 .shop-may-be-useful__arrow {
 

@@ -1,4 +1,42 @@
 .shop__text {
     font-family: Arial, serif;
     font-size: 18px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+
+.shop-box-spinner__switcher-right {
+    height: 70px;
+    width: 70px;
+    background-color: #D5F8E6;
+    border-radius: 50%;
+    border-spacing: 5px;
+    border-style: inset;
+    border-color: #d0e4ea;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30%;
+}
+
+.shop-link__add-to-basket {
+}
+
+.shop-box--outer-flex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.shop-box--outer-flex > * {
+    width: 150%;
+}
+
+.shop__text--red {
+    font-family: Arial, serif;
+    font-size: 18px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    color: #FC0909;
 }

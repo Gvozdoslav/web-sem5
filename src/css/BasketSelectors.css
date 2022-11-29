@@ -1,0 +1,133 @@
+.shop-box-basket {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.shop-box-basket-items {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 0 6%;
+}
+
+.shop-box-basket-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 7%;
+}
+
+.shop-box-basket-item-body {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+}
+
+.shop-box-basket-item-body__img {
+    max-height: 200px;
+}
+
+.shop-box-basket-item-body__name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+}
+
+.shop-box-basket-item-body-price-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.shop-box-basket-item-body-price-info-body {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.shop-box-basket-item-body-price-info-body__upper-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 7%;
+}
+
+.shop-box-basket-item-body-price-info-body__lower-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shop-box-basket-item-body-price-info-body-links {
+    display: flex;
+    flex-direction: row;
+}
+
+.shop-box-basket-item-body-price-info-body-links__body {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.shop-box-basket-item-body-price-info-body-links-body__element {
+
+}
+
+.shop-box-basket-item-body-price-info-body-links-body-element__img {
+    max-height: 44px;
+}
+
+.shop-box-calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.shop-box-calculator-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.shop-box-calculator-list-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 35%;
+}
+
+.shop-box-calculator-list-element__first {
+    margin-right: auto;
+}
+
+.shop-box-calculator-list-element__second {
+    margin-left: auto;
+}
+
+.shop-box-calculator-subtotal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 35%;
+}
+
+.shop-box-calculator-subtotal__first {
+    margin-right: auto;
+}
+
+.shop-box-calculator-subtotal__second {
+    margin-right: 6%;
+}
