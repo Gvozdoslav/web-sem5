@@ -4,14 +4,14 @@
     padding: 0;
 }
 
-@media(min-width: 1150px) {
+@media (min-width: 1150px) {
     .shop-body {
         background: left 5% url("../images/Background.jpg");
         margin: 0 auto;
     }
 }
 
-.shopHeader{
+.shopHeader {
     box-shadow: 0 0 5px 3px #d5f8e6 inset;
     background-color: rgba(174, 224, 238, 0.67);
     width: 100%;

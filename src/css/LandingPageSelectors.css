@@ -63,7 +63,6 @@
     display: flex;
     flex-direction: row;
     height: fit-content;
-    width: fit-content;
     list-style: none;
     align-items: center;
     justify-content: space-between;
@@ -111,14 +110,16 @@
 .shop-box-spinner__img {
     max-width: 345px;
     max-height: 260px;
-    margin-bottom: 11.6%;
-    margin-top: 11.6%;
+}
+
+.shop-box-spinner__img--inactive {
+    display: none;
 }
 
 .shop-box-spinner__pages {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .shop-box-spinner__page {
@@ -127,17 +128,8 @@
     display: flex;
     background-color: #D5F8E6;
     border-radius: 5px;
-    margin-right: 10px;
-}
-
-.shop-box-spinner__page:active {
-    height: 10px;
-    width: 370px;
-    display: flex;
-    background-color: #D5F8E6;
-    border-radius: 5px;
-    margin-right: 10px;
 }
 
 .shop-box-spinner__element {
+    width: 85%;
 }

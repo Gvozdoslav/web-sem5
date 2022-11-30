@@ -38,7 +38,7 @@
 }
 
 .shop-container-box__text {
-    font-family: Arial ,serif;
+    font-family: Arial, serif;
     font-size: 18px;
 }
 
@@ -82,11 +82,10 @@
     max-height: 40px;
     position: relative;
     margin-left: auto;
-/*    TODO: */
 }
 
 .shop-container-box__button-text {
-    font-family: Arial ,serif;
+    font-family: Arial, serif;
     font-size: 18px;
 }
 
@@ -153,7 +152,7 @@
     margin-top: 0;
 }
 
-.shop-review-block__review-header{
+.shop-review-block__review-header {
     padding: 0;
     list-style: none;
     display: flex;
