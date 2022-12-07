@@ -292,3 +292,28 @@
     flex-direction: row;
     margin-bottom: 0;
 }
+
+.shop-icons__heart {
+
+}
+
+.shop-icons__heart:hover {
+    background-color: #FC0909;
+}
+
+.arrow_case {
+    width: 100%;
+    opacity: 0;
+    animation-delay: 1s;
+    -webkit-animation: arrowInOut 8s linear forwards;
+    animation: arrowInOut 8s linear forwards;
+}
+
+@-webkit-keyframes arrowInOut {
+    0%,100% {opacity: 0;}
+    30%, 80% {opacity: 1;}
+}
+@keyframes arrowInOut {
+    0%,100% {opacity: 0;}
+    30%, 80% {opacity: 1;}
+}

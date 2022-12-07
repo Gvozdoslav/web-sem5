@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="../css/LandingPageSelectors.css"/>
     <meta charset="UTF-8">
     <title>CheapSlaves</title>
-    <script type="text/javascript" src="../js/spinner.js"></script>
 </head>
 
 <body class="shop-body">
@@ -34,7 +33,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <img class="shopHeader__clickable-icon" src="../images/HeartIcon.png" alt="Hear">
+                        <img class="shopHeader__clickable-icon" src="../images/HeartIcon.png" alt="Heart">
                     </a>
                 </li>
                 <li>
@@ -44,7 +43,8 @@
                 </li>
                 <li>
                     <a href="BasketPage.html">
-                        <img style="height: 54px" class="shopHeader__clickable-icon" src="../images/ShoppingCart.svg" alt="Cart">
+                        <img class="shopHeader__clickable-icon" src="../images/ShoppingCart.svg"
+                             alt="Cart">
                     </a>
                 </li>
             </ul>
@@ -89,57 +89,164 @@
     <section class="shop-box">
         <div class="shop-container">
             <div class="shop-box-spinner-wrapper">
-                <ul class="shop-box-spinner">
-                    <li class="shop-box-spinner__element">
+                <div class="shop-box-spinner">
+                    <div>
                         <a class="shop-box-spinner__switcher-left" onclick="prev()" href="##">
                             <p class="shop-box-spinner__switcher-text">
                                 &#10094
                             </p>
                         </a>
-                    </li>
-                    <li class="shop-box-spinner__left">
-                        <div class="shop-box-spinner__img-with-text">
-                            <img class="shop-box-spinner__img-left" src="../images/KiruxaSeries.png" alt="KiruxaSeries">
-                            <p class="shop-box__text">KIRUXA SERIES</p>
-                        </div>
-                        <div class="shop-box-spinner__note">
-                            <ins class="shop-box__text">PREORDER NOW</ins>
-                        </div>
-                    </li>
-                    <li class="shop-box-spinner__element" onload="init()">
-                        <img class="shop-box-spinner__img"
-                             src="../images/Kiruxa.png" alt="Kiruxa">
-                        <img class="shop-box-spinner__img"
-                             src="../images/Igorek.jpg" alt="Igorek">
-                        <img class="shop-box-spinner__img"
-                             src="../images/Sanya.jpg" alt="Sanya">
-                    </li>
-                    <li class="shop-box-spinner__element">
-                        <div class="shop-box-spinner__note">
-                            <p class="shop-box__text">
-                                BRAND NEW<br>
-                                CALLBACKCAT
-                            </p>
-                        </div>
-                    </li>
-                    <li class="shop-box-spinner__element">
+                    </div>
+                    <ul class="shop-box-spinner-items" onload="init()">
+                        <li class="shop-box-spinner-item">
+<!--                            <div>-->
+<!--                                <a class="shop-box-spinner__switcher-left" onclick="prev()" href="##">-->
+<!--                                    <p class="shop-box-spinner__switcher-text">-->
+<!--                                        &#10094-->
+<!--                                    </p>-->
+<!--                                </a>-->
+<!--                            </div>-->
+                            <div class="shop-box-spinner__left">
+                                <div class="shop-box-spinner__img-with-text">
+                                    <img class="shop-box-spinner__img-left" src="../images/KiruxaSeries.png"
+                                         alt="KiruxaSeries">
+                                    <p class="shop-box__text">KIRUXA SERIES</p>
+                                </div>
+                                <div class="shop-box-spinner__note">
+                                    <ins class="shop-box__text">PREORDER NOW</ins>
+                                </div>
+                            </div>
+                            <div class="shop-box-spinner__element">
+                                <img class="shop-box-spinner__img"
+                                     src="../images/Kiruxa.png" alt="Kiruxa">
+                            </div>
+                            <div class="shop-box-spinner__element">
+                                <div class="shop-box-spinner__note">
+                                    <p class="shop-box__text">
+                                        BRAND NEW<br>
+                                        CALLBACKCAT
+                                    </p>
+                                </div>
+                            </div>
+<!--                            <div>-->
+<!--                                <a class="shop-box-spinner__switcher-right" onclick="next()" href="##">-->
+<!--                                    <p class="shop-box-spinner__switcher-text">-->
+<!--                                        &#10095-->
+<!--                                    </p>-->
+<!--                                </a>-->
+<!--                            </div>-->
+                        </li>
+
+                        <li class="shop-box-spinner-item">
+<!--                            <div>-->
+<!--                                <a class="shop-box-spinner__switcher-left" onclick="prev()" href="##">-->
+<!--                                    <p class="shop-box-spinner__switcher-text">-->
+<!--                                        &#10094-->
+<!--                                    </p>-->
+<!--                                </a>-->
+<!--                            </div>-->
+                            <div class="shop-box-spinner__left">
+                                <div class="shop-box-spinner__img-with-text">
+                                    <img class="shop-box-spinner__img-left" src="../images/Tinka.svg"
+                                         alt="Tinka">
+                                    <p class="shop-box__text">
+                                        TINKOFF BANK PRODUCT<br>
+                                    </p>
+                                </div>
+                                <div class="shop-box-spinner__note">
+                                    <p class="shop-box__text">
+                                        BUY NOW
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="shop-box-spinner__element">
+                                <img class="shop-box-spinner__img"
+                                     src="../images/Igorek.jpg" alt="Igorek">
+                            </div>
+                            <div class="shop-box-spinner__element">
+                                <div class="shop-box-spinner__note">
+                                    <p class="shop-box__text">
+                                        LIMITED<br>
+                                        EDITION
+                                    </p>
+                                </div>
+                            </div>
+<!--                            <div>-->
+<!--                                <a class="shop-box-spinner__switcher-right" onclick="next()" href="##">-->
+<!--                                    <p class="shop-box-spinner__switcher-text">-->
+<!--                                        &#10095-->
+<!--                                    </p>-->
+<!--                                </a>-->
+<!--                            </div>-->
+                        </li>
+                        <li class="shop-box-spinner-item">
+<!--                            <div>-->
+<!--                                <a class="shop-box-spinner__switcher-left" onclick="prev()" href="##">-->
+<!--                                    <p class="shop-box-spinner__switcher-text">-->
+<!--                                        &#10094-->
+<!--                                    </p>-->
+<!--                                </a>-->
+<!--                            </div>-->
+                            <div class="shop-box-spinner__left">
+                                <div class="shop-box-spinner__img-with-note">
+                                    <img class="shop-box-spinner__img-left" src="../images/Shark.png"
+                                         alt="Shark">
+                                    <div class="shop-box-spinner__note">
+                                        <p class="shop-box__text">
+                                            HAVE TIME<br>
+                                            TO BUY
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="shop-box-spinner__note">
+                                    <p class="shop-box__text">
+                                        PLAIN OLD<br>
+                                        MEGALODON<br>
+                                        CAME BACK
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="shop-box-spinner__element">
+                                <img class="shop-box-spinner__img"
+                                     src="../images/Sanya.jpg" alt="Sanya">
+                            </div>
+                            <div class="shop-box-spinner__element">
+                                <div class="shop-box-spinner__note">
+                                    <p class="shop-box__text">
+                                        CHEAPSLAVES<br>
+                                        BESTSELLER
+                                    </p>
+                                </div>
+                            </div>
+<!--                            <div>-->
+<!--                                <a class="shop-box-spinner__switcher-right" onclick="next()" href="##">-->
+<!--                                    <p class="shop-box-spinner__switcher-text">-->
+<!--                                        &#10095-->
+<!--                                    </p>-->
+<!--                                </a>-->
+<!--                            </div>-->
+                        </li>
+                    </ul>
+
+                    <div>
                         <a class="shop-box-spinner__switcher-right" onclick="next()" href="##">
                             <p class="shop-box-spinner__switcher-text">
                                 &#10095
                             </p>
                         </a>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+
                 <div class="shop-box-spinner__pages" onload="init()">
-                    <a style="margin: 0" href="#.">
+                    <a href="#.">
                         <div class="shop-box-spinner__page" onclick="dot(1)">
                         </div>
                     </a>
-                    <a style="margin: 0" href="#.">
+                    <a href="#.">
                         <div class="shop-box-spinner__page" onclick="dot(2)">
                         </div>
                     </a>
-                    <a style="margin: 0" href="#.">
+                    <a href="#.">
                         <div class="shop-box-spinner__page" onclick="dot(3)">
                         </div>
                     </a>
@@ -182,5 +289,7 @@
         </nav>
     </div>
 </footer>
+
+<script type="text/javascript" src="../js/spinner.js"></script>
 </body>
 </html>
