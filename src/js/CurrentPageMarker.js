@@ -9,7 +9,7 @@ function initPageIcon() {
         pagesIcons[0].getElementsByTagName("img")[0].src = "/web/src/images/ScalesActiveIcon.svg"
     }
 
-    if (window.location.pathname === "/web/src/pages/Favorites.html") {
+    if (window.location.pathname === "/web/src/pages/FavoritesPage.html") {
         pagesIcons[1].getElementsByTagName("img")[0].src = "/web/src/images/HeartActive.svg"
     }
 
