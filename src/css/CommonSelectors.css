@@ -4,12 +4,12 @@
     padding: 0;
 }
 
-@media (min-width: 1150px) {
-    .shop-body {
-        background: left 5% url("../images/Background.jpg");
-        margin: 0 auto;
-    }
+
+.shop-body {
+    background: left 5% url("../images/Background.jpg");
+    margin: 0 auto;
 }
+
 
 .shopHeader {
     box-shadow: 0 0 5px 3px #d5f8e6 inset;
@@ -176,13 +176,6 @@
     margin-bottom: 4px;
 }
 
-.shop-box-note-with-img__text {
-    font-size: 36px;
-    margin: 0 auto;
-    width: 200px;
-    color: #2455b9;
-}
-
 .shop-box-spinner__switcher-left {
     height: 70px;
     width: 70px;
@@ -313,12 +306,21 @@
 }
 
 @-webkit-keyframes arrowInOut {
-    0%,100% {opacity: 0;}
-    30%, 80% {opacity: 1;}
+    0%, 100% {
+        opacity: 0;
+    }
+    30%, 80% {
+        opacity: 1;
+    }
 }
+
 @keyframes arrowInOut {
-    0%,100% {opacity: 0;}
-    30%, 80% {opacity: 1;}
+    0%, 100% {
+        opacity: 0;
+    }
+    30%, 80% {
+        opacity: 1;
+    }
 }
 
 .shopHeader-pages__page {
