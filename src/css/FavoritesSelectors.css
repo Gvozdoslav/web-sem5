@@ -1,0 +1,94 @@
+.shop-box-favorites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.shop-box-favorites__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.shop-box-favorites__items:first-child {
+    margin-top: 2%;
+}
+
+.shop-box-favorites-items__item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.shop-box-favorites-items-item__elements {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    width: 55%;
+    justify-content: space-evenly;
+}
+
+.shop-box-favorites-items-item-elements__element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.shop-box-favorites-items-item-elements-element__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.shop-box-favorites-items-item-elements-element-body__img {
+    max-height: 200px;
+    height: auto;
+    border-radius: 5%;
+}
+
+.shop-box-favorites-items-item-elements-element-body__text {
+    font-family: Arial, serif;
+    font-size: 26px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.shop-box-favorites-items-item-elements-element-body__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.shop-box-favorites-items-item-elements-element-body-icons__icon {
+    max-height: 55px;
+    max-width: 54px;
+}
+
+.shop-box-favorites-items-item-elements-element-body-icons__icon:hover {
+    opacity: 0.75;
+}
+
+.shop-box-favorites-items-item-elements-element-body__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #D5F8E6;
+    border-color: unset;
+    border-radius: 7px;
+    width: 100%;
+
+}

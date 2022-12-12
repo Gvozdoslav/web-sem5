@@ -1,4 +1,4 @@
-# [CheapSlaves](src/pages/index.html)
+# [CheapSlaves](src/pages/LandingPage.html)
 ## M33061 Remizov Rostislav
 
 ### A website - online slaves shop 
