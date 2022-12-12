@@ -4,9 +4,9 @@ const j = 3
 const dots = document.getElementsByClassName("shop-box-spinner__page")
 const offers = document.getElementsByClassName("shop-box-spinner-items")[0].getElementsByTagName("li")
 
-window.addEventListener("load", init)
+window.addEventListener("load", initSpinner)
 
-function init() {
+function initSpinner() {
 
     for (let k = 0; k < j; k++) {
         offers[k].classList.replace("shop-box-spinner-item", "shop-box-spinner-item--inactive")

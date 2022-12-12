@@ -26,22 +26,22 @@
                 </li>
             </ul>
             <ul class="shopHeader__pages">
-                <li>
+                <li class="shopHeader-pages__page">
                     <a href="ComparePage.html">
                         <img class="shopHeader__clickable-icon" src="../images/ScalesIcon.svg" alt="Scales">
                     </a>
                 </li>
-                <li>
+                <li class="shopHeader-pages__page">
                     <a href="#">
-                        <img class="shopHeader__clickable-icon" src="../images/HeartIcon.png" alt="Heart">
+                        <img class="shopHeader__clickable-icon" src="../images/Heart.svg" alt="Heart">
                     </a>
                 </li>
-                <li>
+                <li class="shopHeader-pages__page">
                     <a href="#">
                         <img class="shopHeader__clickable-icon" src="../images/ProfileIcon.png" alt="Profile">
                     </a>
                 </li>
-                <li>
+                <li class="shopHeader-pages__page">
                     <a href="BasketPage.html">
                         <img class="shopHeader__clickable-icon" src="../images/ShoppingCart.svg"
                              alt="Cart">
@@ -97,15 +97,8 @@
                             </p>
                         </a>
                     </div>
-                    <ul class="shop-box-spinner-items" onload="init()">
+                    <ul class="shop-box-spinner-items" onload="initSpinner()">
                         <li class="shop-box-spinner-item">
-<!--                            <div>-->
-<!--                                <a class="shop-box-spinner__switcher-left" onclick="prev()" href="##">-->
-<!--                                    <p class="shop-box-spinner__switcher-text">-->
-<!--                                        &#10094-->
-<!--                                    </p>-->
-<!--                                </a>-->
-<!--                            </div>-->
                             <div class="shop-box-spinner__left">
                                 <div class="shop-box-spinner__img-with-text">
                                     <img class="shop-box-spinner__img-left" src="../images/KiruxaSeries.png"
@@ -128,23 +121,9 @@
                                     </p>
                                 </div>
                             </div>
-<!--                            <div>-->
-<!--                                <a class="shop-box-spinner__switcher-right" onclick="next()" href="##">-->
-<!--                                    <p class="shop-box-spinner__switcher-text">-->
-<!--                                        &#10095-->
-<!--                                    </p>-->
-<!--                                </a>-->
-<!--                            </div>-->
                         </li>
 
                         <li class="shop-box-spinner-item">
-<!--                            <div>-->
-<!--                                <a class="shop-box-spinner__switcher-left" onclick="prev()" href="##">-->
-<!--                                    <p class="shop-box-spinner__switcher-text">-->
-<!--                                        &#10094-->
-<!--                                    </p>-->
-<!--                                </a>-->
-<!--                            </div>-->
                             <div class="shop-box-spinner__left">
                                 <div class="shop-box-spinner__img-with-text">
                                     <img class="shop-box-spinner__img-left" src="../images/Tinka.svg"
@@ -171,22 +150,8 @@
                                     </p>
                                 </div>
                             </div>
-<!--                            <div>-->
-<!--                                <a class="shop-box-spinner__switcher-right" onclick="next()" href="##">-->
-<!--                                    <p class="shop-box-spinner__switcher-text">-->
-<!--                                        &#10095-->
-<!--                                    </p>-->
-<!--                                </a>-->
-<!--                            </div>-->
                         </li>
                         <li class="shop-box-spinner-item">
-<!--                            <div>-->
-<!--                                <a class="shop-box-spinner__switcher-left" onclick="prev()" href="##">-->
-<!--                                    <p class="shop-box-spinner__switcher-text">-->
-<!--                                        &#10094-->
-<!--                                    </p>-->
-<!--                                </a>-->
-<!--                            </div>-->
                             <div class="shop-box-spinner__left">
                                 <div class="shop-box-spinner__img-with-note">
                                     <img class="shop-box-spinner__img-left" src="../images/Shark.png"
@@ -218,13 +183,6 @@
                                     </p>
                                 </div>
                             </div>
-<!--                            <div>-->
-<!--                                <a class="shop-box-spinner__switcher-right" onclick="next()" href="##">-->
-<!--                                    <p class="shop-box-spinner__switcher-text">-->
-<!--                                        &#10095-->
-<!--                                    </p>-->
-<!--                                </a>-->
-<!--                            </div>-->
                         </li>
                     </ul>
 
@@ -237,7 +195,7 @@
                     </div>
                 </div>
 
-                <div class="shop-box-spinner__pages" onload="init()">
+                <div class="shop-box-spinner__pages" onload="initSpinner()">
                     <a href="#.">
                         <div class="shop-box-spinner__page" onclick="dot(1)">
                         </div>
@@ -256,10 +214,9 @@
     </section>
 </main>
 <footer class="shop-footer">
-    <!--    TODO: align link by center    -->
     <div class="shop-container">
-        <nav class="shop-nav-bar">
-            <div class="shop-footer__element-with-text">
+        <nav class="shop-footer-nav-bar">
+            <div class="shop-footer-nav-bar__url-name">
                 <a class="shop-footer__text" href="#">
                     cheapslavesforeveryoneforeverforfunforhome.com
                 </a>
@@ -290,6 +247,7 @@
     </div>
 </footer>
 
-<script type="text/javascript" src="../js/spinner.js"></script>
+<script type="text/javascript" src="../js/Spinner.js"></script>
+<script type="text/javascript" src="../js/CurrentPageMarker.js"></script>
 </body>
 </html>

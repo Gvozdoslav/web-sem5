@@ -24,25 +24,26 @@
                     <input class="searchbar__find-button" type="submit" value="Find">
                 </li>
             </ul>
-            <ul class="shopHeader__pages">
-                <li>
+            <ul class="shopHeader__pages" onload="initPageIcon()">
+                <li class="shopHeader-pages__page">
                     <a href="ComparePage.html">
                         <img class="shopHeader__clickable-icon" src="../images/ScalesIcon.svg" alt="Scales">
                     </a>
                 </li>
-                <li>
+                <li class="shopHeader-pages__page">
                     <a href="#">
-                        <img class="shopHeader__clickable-icon" src="../images/HeartIcon.png" alt="Hear">
+                        <img class="shopHeader__clickable-icon" src="../images/Heart.svg" alt="Heart">
                     </a>
                 </li>
-                <li>
+                <li class="shopHeader-pages__page">
                     <a href="#">
                         <img class="shopHeader__clickable-icon" src="../images/ProfileIcon.png" alt="Profile">
                     </a>
                 </li>
-                <li>
+                <li class="shopHeader-pages__page">
                     <a href="BasketPage.html">
-                        <img class="shopHeader__clickable-icon" src="../images/ShoppingCart.svg" alt="Cart">
+                        <img class="shopHeader__clickable-icon" src="../images/ShoppingCart.svg"
+                             alt="Cart">
                     </a>
                 </li>
             </ul>
@@ -307,9 +308,9 @@
 </main>
 <footer class="shop-footer">
     <div class="shop-container">
-        <nav class="shop-nav-bar">
-            <div class="shop-footer__element-with-text">
-                <a class="shop-footer__text" href="LandingPage.html">
+        <nav class="shop-footer-nav-bar">
+            <div class="shop-footer-nav-bar__url-name">
+                <a class="shop-footer__text" href="#">
                     cheapslavesforeveryoneforeverforfunforhome.com
                 </a>
             </div>
@@ -338,5 +339,7 @@
         </nav>
     </div>
 </footer>
+
+<script type="text/javascript" src="../js/CurrentPageMarker.js"></script>
 </body>
 </html>
