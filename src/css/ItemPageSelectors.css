@@ -54,6 +54,7 @@
     flex-direction: column;
     list-style-type: none;
     padding: 0;
+    width: 100%;
 }
 
 .shop-container-box__button-container {
@@ -239,19 +240,28 @@
     padding: 0;
 }
 
-.shop-may-be-useful__items > * {
-    /*margin-right: 6.43%;*/
-}
-
 .shop-may-be-useful__item {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.shop-may-be-useful__item-picture {
-    max-height: 140px;
-    border-radius: 10%;
+@media only screen and (min-device-width: 200px) {
+    .shop-may-be-useful__item-picture {
+        max-height: 280px;
+        border-radius: 10%;
+    }
+}
+
+@media only screen and (min-device-width: 1200px) {
+    .shop-may-be-useful__item-picture {
+        max-height: 140px;
+        border-radius: 10%;
+    }
+}
+
+.shop-may-be-useful__items:last-child {
+    display: none;
 }
 
 .shop-may-be-useful__item-footer {
