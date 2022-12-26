@@ -126,6 +126,11 @@
     max-height: 44px;
 }
 
+.shop-box-basket-item-body-price-info-body-links-body-element__img:hover {
+    opacity: 0.75;
+}
+
+
 .shop-box-calculator {
     display: flex;
     flex-direction: column;
@@ -177,3 +182,8 @@
     align-items: center;
     width: 50%;
 }
+
+.shop-box-basket-item-body-price-info-body-links-body__link {
+
+}
+

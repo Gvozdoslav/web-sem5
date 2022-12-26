@@ -55,10 +55,10 @@
     <div class="shop-box--outer-flex">
         <section class="shop-box">
             <div class="shop-box-basket">
-                <ul class="shop-box-basket-items">
+                <ul class="shop-box-basket-items" onload="loadBasket()">
                     <li class="shop-box-basket-item">
                         <ul class="shop-box-basket-item-body">
-                            <li class="shop-box-basket-item-body__img">
+                            <li>
                                 <img src="../images/Igorek.jpg" class="shop-box-basket-item-body__img" alt="ItemPhoto">
                             </li>
                             <li class="shop-box-basket-item-body__name">
@@ -87,14 +87,13 @@
                                     <li class="shop-box-basket-item-body-price-info-body-links">
                                         <ul class="shop-box-basket-item-body-price-info-body-links__body">
                                             <li class="shop-box-basket-item-body-price-info-body-links-body__element">
-                                                <!--                                                TODO: implement class for selector "a"-->
-                                                <a href="#" class="">
+                                                <a href="#" class="shop-box-basket-item-body-price-info-body-links-body__link">
                                                     <img class="shop-box-basket-item-body-price-info-body-links-body-element__img"
-                                                         src="../images/TrashBinIcon.png" alt="TrashBin">
+                                                         src="../images/TrashBinIcon.png" alt="TrashBin" onclick="removeSlaveFromBasket(1)">
                                                 </a>
                                             </li>
                                             <li class="shop-box-basket-item-body-price-info-body-links-body__element">
-                                                <a href="#">
+                                                <a href="#" class="shop-box-basket-item-body-price-info-body-links-body__link">
                                                     <img class="shop-box-basket-item-body-price-info-body-links-body-element__img"
                                                          src="../images/HeartIcon.png" alt="Like">
                                                 </a>
@@ -107,7 +106,7 @@
                     </li>
                     <li class="shop-box-basket-item">
                         <ul class="shop-box-basket-item-body">
-                            <li class="shop-box-basket-item-body__img">
+                            <li>
                                 <img src="../images/Sanya.jpg" class="shop-box-basket-item-body__img" alt="ItemPhoto">
                             </li>
                             <li class="shop-box-basket-item-body__name">
@@ -136,18 +135,23 @@
                                     <li class="shop-box-basket-item-body-price-info-body-links">
                                         <ul class="shop-box-basket-item-body-price-info-body-links__body">
                                             <li class="shop-box-basket-item-body-price-info-body-links-body__element">
-                                                <img class="shop-box-basket-item-body-price-info-body-links-body-element__img"
-                                                     src="../images/TrashBinIcon.png" alt="TrashBin">
+                                                <a href="#" class="shop-box-basket-item-body-price-info-body-links-body__link">
+                                                    <img class="shop-box-basket-item-body-price-info-body-links-body-element__img"
+                                                         src="../images/TrashBinIcon.png" alt="TrashBin" onclick="removeSlaveFromBasket(2)">
+                                                </a>
                                             </li>
                                             <li class="shop-box-basket-item-body-price-info-body-links-body__element">
-                                                <img class="shop-box-basket-item-body-price-info-body-links-body-element__img"
-                                                     src="../images/HeartIcon.png" alt="Like">
+                                                <a href="#" class="shop-box-basket-item-body-price-info-body-links-body__link">
+                                                    <img class="shop-box-basket-item-body-price-info-body-links-body-element__img"
+                                                         src="../images/HeartIcon.png" alt="Like">
+                                                </a>
                                             </li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -246,13 +250,14 @@
                                 <p class="shop__text">
                                     2299$
                                 </p>
-                                <a href="BasketPage.html" class="shop-may-be-useful-item-footer__link">
+                                <a href="##" class="shop-may-be-useful-item-footer__link"
+                                   onclick="addSlaveToBasket(1)">
                                     <img class="shop-may-be-useful-item-footer-link__icon"
                                          src="../images/ShoppingCart.svg" alt="Cart">
                                 </a>
                                 <a href="#" class="shop-may-be-useful-item-footer__link">
                                     <img class="shop-may-be-useful-item-footer-link__icon"
-                                        src="../images/Heart.svg" alt="Heart">
+                                         src="../images/Heart.svg" alt="Heart">
                                 </a>
                             </div>
                         </li>
@@ -265,7 +270,8 @@
                                 <p class="shop__text">
                                     287$
                                 </p>
-                                <a href="BasketPage.html" class="shop-may-be-useful-item-footer__link">
+                                <a href="##" class="shop-may-be-useful-item-footer__link"
+                                   onclick="addSlaveToBasket(2)">
                                     <img class="shop-may-be-useful-item-footer-link__icon"
                                          src="../images/ShoppingCart.svg" alt="Cart">
                                 </a>
@@ -285,7 +291,8 @@
                                 <p class="shop__text">
                                     1337$
                                 </p>
-                                <a href="BasketPage.html" class="shop-may-be-useful-item-footer__link">
+                                <a href="##" class="shop-may-be-useful-item-footer__link"
+                                   onclick="addSlaveToBasket(3)">
                                     <img class="shop-may-be-useful-item-footer-link__icon"
                                          src="../images/ShoppingCart.svg" alt="Cart">
                                 </a>
@@ -304,11 +311,12 @@
                                 <p class="shop__text">
                                     287$
                                 </p>
-                                <a href="BasketPage.html" class="shop-may-be-useful-item-footer__link">
+                                <a href="##" class="shop-may-be-useful-item-footer__link">
                                     <img class="shop-may-be-useful-item-footer-link__icon"
                                          src="../images/ShoppingCart.svg" alt="Cart">
                                 </a>
-                                <a href="#" class="shop-may-be-useful-item-footer__link">
+                                <a href="#" class="shop-may-be-useful-item-footer__link"
+                                   onclick="addSlaveToBasket(4)">
                                     <img class="shop-may-be-useful-item-footer-link__icon"
                                          src="../images/Heart.svg" alt="Heart">
                                 </a>
@@ -362,5 +370,6 @@
 </footer>
 
 <script type="text/javascript" src="../js/CurrentPageMarker.js"></script>
+<script type="text/javascript" src="../js/BasketFiller.js"></script>
 </body>
 </html>
