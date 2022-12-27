@@ -84,15 +84,29 @@ function removeSlaveFromBasket(elementNumber) {
         localStorage.setItem("n", "2")
     }
 
-    let n = parseInt(localStorage.getItem("n"))
-    if (n === 2) {
+    let id = parseInt(localStorage.getItem("n"))
+    if (id === 2) {
         return
     }
 
-    localStorage.removeItem("img" + elementNumber)
-    localStorage.removeItem("name" + elementNumber)
-    localStorage.removeItem("price" + elementNumber)
-    localStorage.removeItem("defaultPrice" + elementNumber)
+    let basketEntities = localStorage.getItem("basketEntities")
+    basketEntities = JSON.parse(basketEntities)
+
+    if (basketEntities.length === 1) {
+        basketEntities = []
+    }
+    else {
+        for (let elem in basketEntities) {
+
+            let basketEntity = JSON.parse(basketEntities[elem].basketEntity)
+            if (basketEntity.id === elementNumber) {
+                basketEntities.splice(elem, elem)
+                break;
+            }
+        }
+    }
+
+    localStorage.setItem("basketEntities", JSON.stringify(basketEntities))
 
     const slavesInBasket = document
         .getElementsByClassName("shop-box-basket-items")[0]
@@ -106,7 +120,7 @@ function removeSlaveFromBasket(elementNumber) {
 
     updateCalculations()
 
-    localStorage.setItem("n", String(n - 1));
+    localStorage.setItem("n", String(id - 1));
 
     featureNotifier("remove_from_basket")
 }
@@ -117,21 +131,43 @@ function renderItemFromElement(element, elementNumber) {
         localStorage.setItem("n", "2")
     }
 
-    let n = parseInt(localStorage.getItem("n"))
-
+    let id = parseInt(localStorage.getItem("n"))
 
     let imgSourceSplit = element
         .getElementsByClassName("shop-may-be-useful__item-picture")[0]
         .src.split("/")
     let imgName = imgSourceSplit[imgSourceSplit.length - 1]
-    let name = element.getElementsByClassName("shop__text")[0].textContent
-    let price = element.getElementsByClassName("shop__text")[1].textContent
-    let defaultPrice = Math.floor(parseInt(price) / saleCoef)
+    let name = element.getElementsByClassName("shop__text")[0].textContent.trimStart().trimEnd()
+    let price = parseInt(element.getElementsByClassName("shop__text")[1].textContent)
+    let defaultPrice = Math.floor(price / saleCoef)
 
-    localStorage.setItem("img" + (n + 1), imgName)
-    localStorage.setItem("name" + (n + 1), name)
-    localStorage.setItem("price" + (n + 1), price)
-    localStorage.setItem("defaultPrice" + (n + 1), String(defaultPrice))
+    let basketEntity = {
+        id: id + 1,
+        img: imgName,
+        name: name,
+        price: price,
+        defaultPrice: defaultPrice,
+    }
+
+    let basketEntities = localStorage.getItem("basketEntities")
+
+
+    if (basketEntities == null) {
+        basketEntities = [
+            {
+                basketEntity: JSON.stringify(basketEntity)
+            }
+        ]
+    }
+    else {
+        basketEntities = JSON.parse(basketEntities)
+        basketEntities.push(
+            {
+                basketEntity: JSON.stringify(basketEntity)
+            })
+    }
+
+    localStorage.setItem("basketEntities", JSON.stringify(basketEntities))
 
     return '<li class="shop-box-basket-item">\n' +
         '                        <ul class="shop-box-basket-item-body">\n' +
@@ -185,10 +221,22 @@ function renderItemFromElement(element, elementNumber) {
 
 function renderItemFromLocalStorage(elementNumber) {
 
-    let img = localStorage.getItem("img" + (elementNumber))
-    let name = localStorage.getItem("name" + (elementNumber))
-    let price = localStorage.getItem("price" + (elementNumber))
-    let defaultPrice = localStorage.getItem("defaultPrice" + (elementNumber))
+    let elements = JSON.parse(localStorage.getItem("basketEntities"))
+
+    let basketEntity;
+    for (let elem in elements) {
+        elem = JSON.parse(elements[elem].basketEntity)
+        if (elem.id === elementNumber) {
+            basketEntity = elem
+            break;
+        }
+    }
+
+
+    let img = basketEntity.img
+    let name = basketEntity.name
+    let price = basketEntity.price
+    let defaultPrice = basketEntity.defaultPrice
 
     return '<li class="shop-box-basket-item">\n' +
         '                        <ul class="shop-box-basket-item-body">\n' +
@@ -265,8 +313,19 @@ function renderItemPrice(element) {
 
 function renderItemPriceFromLocalStorage(elementNumber) {
 
-    let name = localStorage.getItem("name" + elementNumber)
-    let price = localStorage.getItem("name" + elementNumber)
+    let elements = JSON.parse(localStorage.getItem("basketEntities"))
+
+    let basketEntity;
+    for (let elem in elements) {
+        elem = JSON.parse(elements[elem].basketEntity)
+        if (elem.id === elementNumber) {
+            basketEntity = elem
+            break;
+        }
+    }
+
+    let name = basketEntity.name
+    let price = basketEntity.price
 
     return '<li class="shop-box-calculator-list-element">\n' +
         '                        <div class="shop-box-calculator-list-element__first">\n' +
