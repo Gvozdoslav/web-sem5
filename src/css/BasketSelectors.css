@@ -4,7 +4,7 @@
     width: 100%;
 }
 
-@media only screen and (min-device-width: 200px) {
+@media screen and (min-device-width: 200px){
     .shop-box--outer-flex {
         display: flex;
         flex-direction: row;
@@ -17,7 +17,33 @@
     }
 }
 
-@media only screen and (min-device-width: 1200px) {
+@media screen and (min-device-width: 1200px){
+    .shop-box--outer-flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .shop-box--outer-flex > * {
+        width: 150%;
+    }
+}
+
+@media screen and (min-width: 200px){
+    .shop-box--outer-flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .shop-box--outer-flex > * {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px){
     .shop-box--outer-flex {
         display: flex;
         flex-direction: row;
