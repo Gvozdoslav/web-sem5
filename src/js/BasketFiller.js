@@ -97,7 +97,7 @@ function removeSlaveFromBasket(elementNumber) {
     } else {
         for (let elem in basketEntities) {
 
-            let basketEntity = JSON.parse(basketEntities[elem])
+            let basketEntity = basketEntities[elem]
             if (basketEntity.id === elementNumber) {
                 basketEntities.splice(elem, elem)
                 break;
@@ -140,25 +140,24 @@ function renderItemFromElement(element, elementNumber) {
     let price = parseInt(element.getElementsByClassName("shop__text")[1].textContent)
     let defaultPrice = Math.floor(price / saleCoef)
 
-    let basketEntity = {
+    let basketEntity = new Object({
         id: id + 1,
         img: imgName,
         name: name,
         price: price,
         defaultPrice: defaultPrice,
-    }
+    })
 
     let basketEntities = localStorage.getItem("basketEntities")
 
 
     if (basketEntities == null) {
         basketEntities = [
-            JSON.stringify(basketEntity)
+            basketEntity
         ]
     } else {
         basketEntities = JSON.parse(basketEntities)
-        basketEntities.push(JSON.stringify(basketEntity)
-        )
+        basketEntities.push(basketEntity)
     }
 
     localStorage.setItem("basketEntities", JSON.stringify(basketEntities))
@@ -177,7 +176,7 @@ function renderItemFromElement(element, elementNumber) {
         '                                <ul class="shop-box-basket-item-body-price-info-body">\n' +
         '                                    <li class="shop-box-basket-item-body-price-info-body__upper-info">\n' +
         '                                        <p class="shop__text--red">\n' +
-        '                                            ' + price + "\n" +
+        '                                            ' + price + "$\n" +
         '                                        </p>\n' +
         '                                        <p class="shop__text">\n' +
         '                                            Price with store card\n' +
@@ -219,7 +218,7 @@ function renderItemFromLocalStorage(elementNumber) {
 
     let basketEntity;
     for (let elem in elements) {
-        elem = JSON.parse(elements[elem])
+        elem = elements[elem]
         if (elem.id === elementNumber) {
             basketEntity = elem
             break;
@@ -245,7 +244,7 @@ function renderItemFromLocalStorage(elementNumber) {
         '                                <ul class="shop-box-basket-item-body-price-info-body">\n' +
         '                                    <li class="shop-box-basket-item-body-price-info-body__upper-info">\n' +
         '                                        <p class="shop__text--red">\n' +
-        '                                            ' + price + "\n" +
+        '                                            ' + price + "$\n" +
         '                                        </p>\n' +
         '                                        <p class="shop__text">\n' +
         '                                            Price with store card\n' +
@@ -310,7 +309,7 @@ function renderItemPriceFromLocalStorage(elementNumber) {
 
     let basketEntity;
     for (let elem in elements) {
-        elem = JSON.parse(elements[elem])
+        elem = elements[elem]
         if (elem.id === elementNumber) {
             basketEntity = elem
             break;
