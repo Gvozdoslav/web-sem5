@@ -1,21 +1,23 @@
-
-const saleCoeff = 287 / 300
+const saleCoef = 287 / 300
 
 window.onload = loadBasket
 
 const recommendedSlaves = document
     .getElementsByClassName("shop-may-be-useful__items")[0]
     .getElementsByTagName("li")
-const slavesInBasket = document
-    .getElementsByClassName("shop-box-basket-items")[0]
-const slavesCalculations = document
-    .getElementsByClassName("shop-box-calculator")[0]
-    .getElementsByTagName("ol")[0]
-const slavesSubtotal = document
-    .getElementsByClassName("shop-box-calculator-subtotal")[0]
 
 
 function loadBasket() {
+
+    if (!window.location.pathname.endsWith("BasketPage.html")) {
+        return
+    }
+
+    const slavesInBasket = document
+        .getElementsByClassName("shop-box-basket-items")[0]
+    const slavesCalculations = document
+        .getElementsByClassName("shop-box-calculator")[0]
+        .getElementsByTagName("ol")[0]
 
     if (localStorage.getItem("n") == null) {
         localStorage.setItem("n", "2")
@@ -51,6 +53,18 @@ function addSlaveToBasket(elementNumber) {
     localStorage.setItem("slave" + (n + 1), slaveTemplate)
     localStorage.setItem("price" + (n + 1), priceTemplate[0])
 
+    if (!window.location.pathname.endsWith("BasketPage.html")) {
+        localStorage.setItem("n", String(n + 1));
+        featureNotifier("add_to_basket")
+        return
+    }
+
+    const slavesInBasket = document
+        .getElementsByClassName("shop-box-basket-items")[0]
+    const slavesCalculations = document
+        .getElementsByClassName("shop-box-calculator")[0]
+        .getElementsByTagName("ol")[0]
+
     slavesInBasket.insertAdjacentHTML("beforeend", slaveTemplate)
 
     slavesCalculations.insertAdjacentHTML("beforeend", priceTemplate[0])
@@ -58,22 +72,34 @@ function addSlaveToBasket(elementNumber) {
     updateCalculations()
 
     localStorage.setItem("n", String(n + 1));
+
+    featureNotifier("add_to_basket")
 }
 
 function removeSlaveFromBasket(elementNumber) {
 
-    if (localStorage.getItem("n") == null) {
-        localStorage.setItem("n", "2")
-    }
-
-    let n = parseInt(localStorage.getItem("n"))
-
-    if (n === 2) {
+    if (!window.location.pathname.endsWith("BasketPage.html")) {
         return
     }
 
+    if (localStorage.getItem("n") == null) {
+        localStorage.setItem("n", "2")
+
+    }
+
+    let n = parseInt(localStorage.getItem("n"))
+    if (n === 2) {
+        return
+
+    }
     localStorage.removeItem("slave" + elementNumber)
     localStorage.removeItem("price" + elementNumber)
+
+    const slavesInBasket = document
+        .getElementsByClassName("shop-box-basket-items")[0]
+    const slavesCalculations = document
+        .getElementsByClassName("shop-box-calculator")[0]
+        .getElementsByTagName("ol")[0]
 
     slavesInBasket.getElementsByClassName("shop-box-basket-item")[elementNumber - 1].remove()
 
@@ -82,6 +108,8 @@ function removeSlaveFromBasket(elementNumber) {
     updateCalculations()
 
     localStorage.setItem("n", String(n - 1));
+
+    featureNotifier("remove_from_basket")
 }
 
 function renderItem(element, elementNumber) {
@@ -92,7 +120,7 @@ function renderItem(element, elementNumber) {
     let imgName = imgSourceSplit[imgSourceSplit.length - 1]
     let name = element.getElementsByClassName("shop__text")[0].textContent
     let price = element.getElementsByClassName("shop__text")[1].textContent
-    let defaultPrice = Math.floor(parseInt(price) / saleCoeff)
+    let defaultPrice = Math.floor(parseInt(price) / saleCoef)
 
     return '<li class="shop-box-basket-item">\n' +
         '                        <ul class="shop-box-basket-item-body">\n' +
@@ -125,7 +153,7 @@ function renderItem(element, elementNumber) {
         '                                    <li class="shop-box-basket-item-body-price-info-body-links">\n' +
         '                                        <ul class="shop-box-basket-item-body-price-info-body-links__body">\n' +
         '                                            <li class="shop-box-basket-item-body-price-info-body-links-body__element">\n' +
-        '                                               <a href="#" class="shop-box-basket-item-body-price-info-body-links-body__link">\n' +
+        '                                               <a href="##" class="shop-box-basket-item-body-price-info-body-links-body__link">\n' +
         '                                                   <img class="shop-box-basket-item-body-price-info-body-links-body-element__img"\n' +
         '                                                       src="../images/TrashBinIcon.png" alt="TrashBin" onclick="removeSlaveFromBasket(' + elementNumber + ')">\n' +
         '                                               </a>\n' +
@@ -169,12 +197,19 @@ function renderItemPrice(element) {
 }
 
 function updateCalculations() {
+
+    const slavesCalculations = document
+        .getElementsByClassName("shop-box-calculator")[0]
+        .getElementsByTagName("ol")[0]
+    const slavesSubtotal = document
+        .getElementsByClassName("shop-box-calculator-subtotal")[0]
+
     let subtotal = 0
     let youSave = 0
     for (let i = 0; i < slavesCalculations.children.length; i++) {
         let textPrice = slavesCalculations.children[i].getElementsByClassName("shop__text--red")[0].textContent
         let currentPrice = parseInt(textPrice)
-        let defaultPrice = Math.floor(currentPrice / saleCoeff)
+        let defaultPrice = Math.floor(currentPrice / saleCoef)
         subtotal += currentPrice
         youSave += defaultPrice - currentPrice
     }

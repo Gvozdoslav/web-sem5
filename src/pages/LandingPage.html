@@ -3,6 +3,7 @@
 <link href="../css/CommonSelectors.css" rel="stylesheet">
 <link href="../css/LandingPageSelectors.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../css/ItemPageSelectors.css">
+<link rel="stylesheet" href="../../node_modules/izitoast/dist/css/iziToast.min.css">
 
 <head>
     <link rel="stylesheet" type="text/css" href="../css/LandingPageSelectors.css"/>
@@ -54,7 +55,7 @@
     </div>
 </header>
 
-<main>
+<main onload="pageNotifier()">
     <section class="shop-box">
         <div class="shop-container">
             <ul class="shop-box-offer">
@@ -76,7 +77,7 @@
                     <b class="shop-box__text">+</b>
                 </li>
                 <li>
-                    <a href="ItemPage.html">
+                    <a href="ItemPage.html" onclick="featureNotifier('oleg_item_page')">
                         <img class="shop-box-offer__img" src="../images/Oleg.jpg" alt="Sus">
                     </a>
                 </li>
@@ -223,7 +224,7 @@
                 </div>
                 <div class="shop-may-be-useful">
                     <div class="shop-may-be-useful__arrow">
-                        <a href="#" class="shop-box-spinner__switcher-left">
+                        <a href="##" class="shop-box-spinner__switcher-left" onclick="featureNotifier('may_be_useful')">
                             <p class="shop-box-spinner__switcher-text">
                                 &#10094
                             </p>
@@ -239,8 +240,14 @@
                                 <p class="shop__text">
                                     2299$
                                 </p>
-                                <a href="BasketPage.html" class="shop-link__add-to-basket">
-                                    <img class="shop-container-box__icon" src="../images/ShoppingCart.svg" alt="Cart">
+                                <a href="##" class="shop-may-be-useful-item-footer__link"
+                                   onclick="addSlaveToBasket(1)">
+                                    <img class="shop-may-be-useful-item-footer-link__icon"
+                                         src="../images/ShoppingCart.svg" alt="Cart">
+                                </a>
+                                <a href="#" class="shop-may-be-useful-item-footer__link">
+                                    <img class="shop-may-be-useful-item-footer-link__icon"
+                                         src="../images/Heart.svg" alt="Heart">
                                 </a>
                             </div>
                         </li>
@@ -253,8 +260,14 @@
                                 <p class="shop__text">
                                     287$
                                 </p>
-                                <a href="BasketPage.html">
-                                    <img class="shop-container-box__icon" src="../images/ShoppingCart.svg" alt="Cart">
+                                <a href="##" class="shop-may-be-useful-item-footer__link"
+                                   onclick="addSlaveToBasket(2)">
+                                    <img class="shop-may-be-useful-item-footer-link__icon"
+                                         src="../images/ShoppingCart.svg" alt="Cart">
+                                </a>
+                                <a href="#" class="shop-may-be-useful-item-footer__link">
+                                    <img class="shop-may-be-useful-item-footer-link__icon"
+                                         src="../images/Heart.svg" alt="Heart">
                                 </a>
                             </div>
                         </li>
@@ -268,8 +281,14 @@
                                 <p class="shop__text">
                                     1337$
                                 </p>
-                                <a href="BasketPage.html">
-                                    <img class="shop-container-box__icon" src="../images/ShoppingCart.svg" alt="Cart">
+                                <a href="##" class="shop-may-be-useful-item-footer__link"
+                                   onclick="addSlaveToBasket(3)">
+                                    <img class="shop-may-be-useful-item-footer-link__icon"
+                                         src="../images/ShoppingCart.svg" alt="Cart">
+                                </a>
+                                <a href="#" class="shop-may-be-useful-item-footer__link">
+                                    <img class="shop-may-be-useful-item-footer-link__icon"
+                                         src="../images/Heart.svg" alt="Heart">
                                 </a>
                             </div>
                         </li>
@@ -282,14 +301,20 @@
                                 <p class="shop__text">
                                     287$
                                 </p>
-                                <a href="BasketPage.html">
-                                    <img class="shop-container-box__icon" src="../images/ShoppingCart.svg" alt="Cart">
+                                <a href="##" class="shop-may-be-useful-item-footer__link"
+                                   onclick="addSlaveToBasket(4)">
+                                    <img class="shop-may-be-useful-item-footer-link__icon"
+                                         src="../images/ShoppingCart.svg" alt="Cart">
+                                </a>
+                                <a href="#" class="shop-may-be-useful-item-footer__link">
+                                    <img class="shop-may-be-useful-item-footer-link__icon"
+                                         src="../images/Heart.svg" alt="Heart">
                                 </a>
                             </div>
                         </li>
                     </ul>
                     <div class="shop-may-be-useful__arrow">
-                        <a href="#" class="shop-box-spinner__switcher-right">
+                        <a href="##" class="shop-box-spinner__switcher-right" onclick="featureNotifier('may_be_useful')">
                             <p class="shop-box-spinner__switcher-text">
                                 &#10095
                             </p>
@@ -302,7 +327,7 @@
     <section class="shop-box">
         <div class="shop-container">
             <div class="shop-box-container-map">
-                <iframe class="shop-container__yandex-map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A9b88b918b522e58236036187d549961ec3b61d0759607de80169df5bc7d7434f&amp;source=constructor" height=200></iframe>
+                <iframe class="shop-container__yandex-map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A9b88b918b522e58236036187d549961ec3b61d0759607de80169df5bc7d7434f&amp;scroll=false;source=constructor" height=200></iframe>
             </div>
         </div>
     </section>
@@ -343,5 +368,8 @@
 
 <script type="text/javascript" src="../js/Spinner.js"></script>
 <script type="text/javascript" src="../js/CurrentPageMarker.js"></script>
+<script type="text/javascript" src="../../node_modules/izitoast/src/js/iziToast.js"></script>
+<script type="text/javascript" src="../js/BasketFiller.js"></script>
+<script type="text/javascript" src="../js/Notifier.js"></script>
 </body>
 </html>
