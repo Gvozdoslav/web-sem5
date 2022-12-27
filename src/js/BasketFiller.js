@@ -94,11 +94,10 @@ function removeSlaveFromBasket(elementNumber) {
 
     if (basketEntities.length === 1) {
         basketEntities = []
-    }
-    else {
+    } else {
         for (let elem in basketEntities) {
 
-            let basketEntity = JSON.parse(basketEntities[elem].basketEntity)
+            let basketEntity = JSON.parse(basketEntities[elem])
             if (basketEntity.id === elementNumber) {
                 basketEntities.splice(elem, elem)
                 break;
@@ -154,17 +153,12 @@ function renderItemFromElement(element, elementNumber) {
 
     if (basketEntities == null) {
         basketEntities = [
-            {
-                basketEntity: JSON.stringify(basketEntity)
-            }
+            JSON.stringify(basketEntity)
         ]
-    }
-    else {
+    } else {
         basketEntities = JSON.parse(basketEntities)
-        basketEntities.push(
-            {
-                basketEntity: JSON.stringify(basketEntity)
-            })
+        basketEntities.push(JSON.stringify(basketEntity)
+        )
     }
 
     localStorage.setItem("basketEntities", JSON.stringify(basketEntities))
@@ -225,13 +219,12 @@ function renderItemFromLocalStorage(elementNumber) {
 
     let basketEntity;
     for (let elem in elements) {
-        elem = JSON.parse(elements[elem].basketEntity)
+        elem = JSON.parse(elements[elem])
         if (elem.id === elementNumber) {
             basketEntity = elem
             break;
         }
     }
-
 
     let img = basketEntity.img
     let name = basketEntity.name
@@ -317,7 +310,7 @@ function renderItemPriceFromLocalStorage(elementNumber) {
 
     let basketEntity;
     for (let elem in elements) {
-        elem = JSON.parse(elements[elem].basketEntity)
+        elem = JSON.parse(elements[elem])
         if (elem.id === elementNumber) {
             basketEntity = elem
             break;
