@@ -5,7 +5,6 @@ const pagesIcons = document.getElementsByClassName("shopHeader__pages")[0].getEl
 
 function initPageIcon() {
 
-    console.log(window.location.pathname)
     if (window.location.pathname.endsWith("ComparePage.html")) {
         pagesIcons[0].getElementsByTagName("img")[0].src = "../../src/images/ScalesActiveIcon.svg"
     }
