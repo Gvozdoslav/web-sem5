@@ -26,8 +26,9 @@ function loadBasket() {
     let n = parseInt(localStorage.getItem("n"))
 
     for (let i = 2; i < n; i++) {
-        let currentSlaveTemplate = localStorage.getItem("slave" + (i + 1))
-        let currentPriceTemplate = localStorage.getItem("price" + (i + 1))
+
+        let currentSlaveTemplate = renderItemFromLocalStorage(i + 1)
+        let currentPriceTemplate = renderItemPriceFromLocalStorage(i + 1)
 
         slavesInBasket.insertAdjacentHTML("beforeend", currentSlaveTemplate)
 
@@ -47,11 +48,8 @@ function addSlaveToBasket(elementNumber) {
 
     let slaveToAdd = recommendedSlaves[elementNumber - 1]
 
-    let slaveTemplate = renderItem(slaveToAdd, n + 1)
+    let slaveTemplate = renderItemFromElement(slaveToAdd, n + 1)
     let priceTemplate = renderItemPrice(slaveToAdd)
-
-    localStorage.setItem("slave" + (n + 1), slaveTemplate)
-    localStorage.setItem("price" + (n + 1), priceTemplate[0])
 
     if (!window.location.pathname.endsWith("BasketPage.html")) {
         localStorage.setItem("n", String(n + 1));
@@ -84,16 +82,17 @@ function removeSlaveFromBasket(elementNumber) {
 
     if (localStorage.getItem("n") == null) {
         localStorage.setItem("n", "2")
-
     }
 
     let n = parseInt(localStorage.getItem("n"))
     if (n === 2) {
         return
-
     }
-    localStorage.removeItem("slave" + elementNumber)
+
+    localStorage.removeItem("img" + elementNumber)
+    localStorage.removeItem("name" + elementNumber)
     localStorage.removeItem("price" + elementNumber)
+    localStorage.removeItem("defaultPrice" + elementNumber)
 
     const slavesInBasket = document
         .getElementsByClassName("shop-box-basket-items")[0]
@@ -112,7 +111,14 @@ function removeSlaveFromBasket(elementNumber) {
     featureNotifier("remove_from_basket")
 }
 
-function renderItem(element, elementNumber) {
+function renderItemFromElement(element, elementNumber) {
+
+    if (localStorage.getItem("n") == null) {
+        localStorage.setItem("n", "2")
+    }
+
+    let n = parseInt(localStorage.getItem("n"))
+
 
     let imgSourceSplit = element
         .getElementsByClassName("shop-may-be-useful__item-picture")[0]
@@ -121,6 +127,11 @@ function renderItem(element, elementNumber) {
     let name = element.getElementsByClassName("shop__text")[0].textContent
     let price = element.getElementsByClassName("shop__text")[1].textContent
     let defaultPrice = Math.floor(parseInt(price) / saleCoef)
+
+    localStorage.setItem("img" + (n + 1), imgName)
+    localStorage.setItem("name" + (n + 1), name)
+    localStorage.setItem("price" + (n + 1), price)
+    localStorage.setItem("defaultPrice" + (n + 1), String(defaultPrice))
 
     return '<li class="shop-box-basket-item">\n' +
         '                        <ul class="shop-box-basket-item-body">\n' +
@@ -172,8 +183,64 @@ function renderItem(element, elementNumber) {
         '                '
 }
 
-function renderItemPrice(element) {
+function renderItemFromLocalStorage(elementNumber) {
 
+    let img = localStorage.getItem("img" + (elementNumber))
+    let name = localStorage.getItem("name" + (elementNumber))
+    let price = localStorage.getItem("price" + (elementNumber))
+    let defaultPrice = localStorage.getItem("defaultPrice" + (elementNumber))
+
+    return '<li class="shop-box-basket-item">\n' +
+        '                        <ul class="shop-box-basket-item-body">\n' +
+        '                            <li>\n' +
+        '                                <img src="../images/' + img + '" class="shop-box-basket-item-body__img" alt="ItemPhoto">\n' +
+        '                            </li>\n' +
+        '                            <li class="shop-box-basket-item-body__name">\n' +
+        '                                <p class="shop__text">\n' +
+        '                                    ' + name + "\n" +
+        '                                </p>\n' +
+        '                            </li>\n' +
+        '                            <li class="shop-box-basket-item-body-price-info">\n' +
+        '                                <ul class="shop-box-basket-item-body-price-info-body">\n' +
+        '                                    <li class="shop-box-basket-item-body-price-info-body__upper-info">\n' +
+        '                                        <p class="shop__text--red">\n' +
+        '                                            ' + price + "\n" +
+        '                                        </p>\n' +
+        '                                        <p class="shop__text">\n' +
+        '                                            Price with store card\n' +
+        '                                        </p>\n' +
+        '                                    </li>\n' +
+        '                                    <li class="shop-box-basket-item-body-price-info-body__lower-info">\n' +
+        '                                        <p class="shop__text">\n' +
+        '                                            ' + defaultPrice + "$\n" +
+        '                                        </p>\n' +
+        '                                        <p class="shop__text">\n' +
+        '                                            Standard price\n' +
+        '                                        </p>\n' +
+        '                                    </li>\n' +
+        '                                    <li class="shop-box-basket-item-body-price-info-body-links">\n' +
+        '                                        <ul class="shop-box-basket-item-body-price-info-body-links__body">\n' +
+        '                                            <li class="shop-box-basket-item-body-price-info-body-links-body__element">\n' +
+        '                                               <a href="##" class="shop-box-basket-item-body-price-info-body-links-body__link">\n' +
+        '                                                   <img class="shop-box-basket-item-body-price-info-body-links-body-element__img"\n' +
+        '                                                       src="../images/TrashBinIcon.png" alt="TrashBin" onclick="removeSlaveFromBasket(' + elementNumber + ')">\n' +
+        '                                               </a>\n' +
+        '                                            </li>\n' +
+        '                                            <li class="shop-box-basket-item-body-price-info-body-links-body__element">\n' +
+        '                                               <a href="#" class="shop-box-basket-item-body-price-info-body-links-body__link">\n' +
+        '                                                   <img class="shop-box-basket-item-body-price-info-body-links-body-element__img"\n' +
+        '                                                       src="../images/HeartIcon.png" alt="Like">\n' +
+        '                                               </a>\n' +
+        '                                            </li>\n' +
+        '                                        </ul>\n' +
+        '                                    </li>\n' +
+        '                                </ul>\n' +
+        '                            </li>\n' +
+        '                        </ul>\n' +
+        '                '
+}
+
+function renderItemPrice(element) {
 
     let name = element.getElementsByClassName("shop__text")[0].textContent
     let price = element.getElementsByClassName("shop__text")[1].textContent
@@ -196,6 +263,26 @@ function renderItemPrice(element) {
     ]
 }
 
+function renderItemPriceFromLocalStorage(elementNumber) {
+
+    let name = localStorage.getItem("name" + elementNumber)
+    let price = localStorage.getItem("name" + elementNumber)
+
+    return '<li class="shop-box-calculator-list-element">\n' +
+        '                        <div class="shop-box-calculator-list-element__first">\n' +
+        '                            <p class="shop__text">\n' +
+        '                                ' + name + "\n" +
+        '                            </p>\n' +
+        '                        </div>\n' +
+        '                        <div class="shop-box-calculator-list-element__second">\n' +
+        '                            <p class="shop__text--red">\n' +
+        '                                ' + price + "\n" +
+        '                            </p>\n' +
+        '                        </div>\n' +
+        '                    </li>'
+
+}
+
 function updateCalculations() {
 
     const slavesCalculations = document
@@ -216,5 +303,5 @@ function updateCalculations() {
 
     slavesSubtotal.getElementsByClassName("shop__text")[1].textContent = subtotal + "$"
 
-    slavesSubtotal.getElementsByClassName("shop__text--red")[0].textContent  = youSave + "$"
+    slavesSubtotal.getElementsByClassName("shop__text--red")[0].textContent = youSave + "$"
 }
